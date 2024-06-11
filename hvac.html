@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreman Energy Auditors</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="data/watercooled.js"></script>
+    <script src="data/aircooled.js"></script>
+    <script src="hvac1.js"></script>
+
+
+</head>
+<style>
+    html {
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Foreman Energy Auditors</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="light-audit.html">Light Audit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pump-audit.html">Pump Audit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hvac.html">HVAC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row px-4 py-5 text-center bg-dark text-white"
+        style="background-image: url('./img/coolingHeader.jpg');min-height: 500px;display: flex;align-items: center;background-size: cover;">
+        <div style="background-color: rgba(0, 0, 0, 0.8); width: 75%;margin: auto;border-radius: 50px;">
+
+            <h1 class="mt-5 display-5 fw-bold pb-5">Heating and Ventilating Air Conditioning Systems</h1>
+            <!-- <p class="lead mb-4 pb-4">To help save energy</p> -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h4 style="font-size: 26px;font-weight:bold" class="display-6">Introduction</h4>
+            <p class="">Heating, ventilation, and air conditioning (HVAC) system is designed to achieve the
+                environmental requirements of the comfort of occupants and a process. HVAC systems are more used in
+                different types of buildings such as industrial, commercial, residential and institutional buildings.
+                The main mission of HVAC system is to satisfy the thermal comfort of occupants by adjusting and changing
+                the outdoor air conditions to the desired conditions of occupied buildings. Depending on outdoor
+                conditions, the outdoor air is drawn into the buildings and heated or cooled before it is distributed
+                into the occupied spaces, then it is exhausted to the ambient air or reused in the system. The selection
+                of HVAC systems in a given building will depend on the climate, the age of the building, the individual
+                preferences of the owner of the building and a designer of a project, the project budget, the
+                architectural design of the buildings.
+                <br><br>
+                HVAC systems can be classified according to necessary processes and distribution process. The required
+                processes include the heating process, the cooling process, and ventilation process. Other processes can
+                be added such as humidification and dehumidification process. These processes can be achieved by using
+                suitable HVAC equipment such as heating systems, air-conditioning systems, ventilation fans, and
+                dehumidifiers. The HVAC systems need the distribution system to deliver the required amount of air with
+                the desired environmental condition. The distribution system mainly varies according to the refrigerant
+                type and the delivering method such as air handling equipment, fan coils, air ducts, and water pipes.
+
+            </p>
+        </div>
+        <div class="row text-center" style="justify-content: center;">
+            <div class="col-5 mb-5">
+                <img src="img/hvac1.png" width="100%">
+                <p class="mt-4">Fig 1: Construction Of AHU Unit</p>
+            </div>
+        </div>
+        <div class="row">
+            <h4 style="font-size: 26px;font-weight:bold" class="display-6">How do a Chiller Work?</h4>
+            <p class="">A chiller works on the principle of vapor compression or vapor absorption. Chillers provide
+                a continuous flow of coolant to the cold side of a process water system at a desired temperature of
+                about 50°F (10°C). The coolant is then pumped through the process, extracting heat out of one area of a
+                facility (e.g., machinery, process equipment, etc.) as it flows back to the return side of the process
+                water system.
+                <br><br>
+                A chiller uses a vapor compression mechanical refrigeration system that connects to the process water
+                system through a device called an evaporator. Refrigerant circulates through an evaporator, compressor,
+                condenser and expansion device of a chiller. A thermodynamic process occurs in each of above components
+                of a chiller. The evaporator functions as a heat exchanger such that heat captured by the process
+                coolant flow transfers to the refrigerant. As the heat-transfer takes place, the refrigerant evaporates,
+                changing from a low-pressure liquid into vapor, while the temperature of the process coolant reduces.
+                <br><br>
+                The refrigerant then flows to a compressor, which performs multiple functions. First, it removes
+                refrigerant from the evaporator and ensures that the pressure in the evaporator remains low enough to
+                absorb heat at the correct rate. Second, it raises the pressure in outgoing refrigerant vapor to ensure
+                that its temperature remains high enough to release heat when it reaches the condenser. The refrigerant
+                returns to a liquid state at the condenser. The latent heat given up as the refrigerant changes from
+                vapor to liquid is carried away from the environment by a cooling medium (air or water).
+            </p>
+        </div>
+        <div class="row mt-2">
+            <h4 style="font-size: 26px;font-weight:bold" class="display-6 mb-3">Types of Chillers</h4>
+            <h5>Water Cooled Chiller</h5>
+            <p class="">Water-cooled chillers feature a water-cooled condenser connected with a cooling tower. They have
+                commonly been used for medium and large installations that have a sufficient water supply. Water-cooled
+                chillers can produce more constant performance for commercial and industrial air conditioning because of
+                the relative independence to fluctuations of the ambient temperature. Water-cooled chillers range in
+                size from small 20-ton capacity models to several thousand-ton models that cool the world’s largest
+                facilities such as airports, shopping malls and other facilities.
+                <br><br>
+                A typical water-cooled chiller uses recirculating condenser water from a cooling tower to condense the
+                refrigerant. A water-cooled chiller contains a refrigerant dependent on the entering condenser water
+                temperature (and flow rate), which functions in relation to the ambient wet-bulb temperature. Since the
+                wet-bulb temperature is always lower than the dry-bulb temperature, the refrigerant condensing
+                temperature (and pressure) in a water-cooled chiller can often operate significantly lower than an
+                air-cooled chiller. Thus, water-cooled chillers can operate more efficiently.
+                <br><br>
+                Water-cooled chillers typically reside indoors in an environment protected from the elements. Hence,
+                water-cooled chiller can offer a longer lifespan. Water-cooled chillers typically represent the only
+                option for larger installations. The additional cooling tower system will require additional
+                installation expense and maintenance as compared to air-cooled chillers.
+
+            </p>
+            <div class="row justify-content-center text-center">
+                <div class="col-4 mb-5">
+                    <img src="img/wcc.jpg" alt="" style="width: 100%;margin: auto;">
+                    <p class="mt-4">Fig 2: Water Cooled System</p>
+                </div>
+            </div>
+            <h5>Air Cooled Chiller</h5>
+            <p class="">Air-cooled chillers rely on a condenser cooled by the environment air. Thus, air-cooled chillers
+                may find common application in smaller or medium installations where space constraints may exist. An
+                air-cooled chiller can represent the most practical choice in scenarios where water represents a scarce
+                resource.
+                <br><br>
+                A typical air-cooled chiller can feature propeller fans or mechanical refrigeration cycles to draw
+                ambient air over a finned coil to condense the refrigerant. The condensation of the refrigerant vapor in
+                the air-cooled condenser enables the transfer of heat to the atmosphere.
+                <br><br>
+                Air-cooled chillers offer the significant advantage of lower installation costs. Simpler maintenance
+                also results due to their relative simplicity as compared to water-cooled chillers. Air-cooled chillers
+                will occupy less space, but will mostly reside outside a facility. Thus, the outdoor elements will
+                compromise their functional lifespan.
+                <br><br>
+                The all-inclusive nature of air-cooled chillers reduces maintenance costs. Their relative simplicity
+                coupled with reduced space requirements produces great advantages in many types of installations.
+            </p>
+        </div>
+        <div class="row justify-content-center text-center">
+            <div class="col-5 mb-5">
+                <img src="img/hvac2.jpg" style="width: 100%;margin: auto; height:80%;">
+                <p class="mt-4">Fig 3: Air Cooled Chiller System</p>
+            </div>
+            <div class="col-5 mb-5">
+                <img src="img/aircooled.png" alt="" style="width: 100%;margin: auto;height: 80%;">
+                <p class="mt-4">Fig 4: Vapor Compression Cycle</p>
+            </div>
+        </div>
+        <div class="row">
+            <h4 style="font-size: 26px;font-weight:bold" class="display-6">Instructions</h4>
+            <ul>
+                <li>Specifications of the machine should be written down from the name plate or technical literature.
+                </li>
+                <li>Ensure that the thermo-wells are clean and filled with suitable fluid, a few hours before the test.
+                </li>
+                <li>Ensure that the chilling package is in operation for sufficient time to achieve steady state
+                    temperature and flow rate conditions, close to normal operating temperatures, before beginning
+                    measurements.</li>
+                <li>It may be noted that testing of the chiller at partial refrigeration load is permitted but the load
+                    should be steady during the test.</li>
+                <li>Access to the electrical power panel should be ensured to enable simultaneous measurement of
+                    electrical parameters along with the temperature differential across the chiller. It is advisable to
+                    keep the portable power analyzer connected through the duration of the test.</li>
+                <li>In the case of fuel-fired machines, calibrated in-line flow meters or calibrated fuel day tanks
+                    should be available for fuel flow measurement.</li>
+                <li>For steam turbine driven equipment, calibrated in-line steam flow meter should be available for
+                    steam flow measurement.</li>
+                <li>For steam heated absorption chilling packages, calibrated in-line steam flow meter or arrangement
+                    for collecting steam condensate in a calibrated container should be available for steam flow
+                    measurement.</li>
+                <li>For liquid flow measurements, use of in-line calibrated flow meters is recommended. In the absence
+                    of in-line meters, transit type ultrasonic flow meters may be used.</li>
+                <li>It is desirable that performance characteristics of associated pumps are available for a quick check
+                    of estimated water flow rate, using ultrasonic flow meters for measurements.</li>
+
+            </ul>
+
+        </div>
+        <div class="row">
+            <h4 style="font-size: 26px;font-weight:bold" class="display-6">Precautions:</h4>
+            <ul>
+                <li>Request the machine operator to ensure that all necessary installed instruments and safety trips are
+                    operational.</li>
+                <li>Use appropriate safety precautions while taking measurements on live cables with portable
+                    instruments.</li>
+                <li>Make sure the clamp-on jaws of current transformers are completely closed.</li>
+                <li>Some of the anti-freeze agents used for brine solutions may be corrosive and irritable for the skin,
+                    eyes etc. hence due care should be exercised.</li>
+                <li>Maintain a safe distance from live electrical equipment and rotating mechanical equipment during
+                    measurements. Ensure that at least two persons are present at the time of measurements.</li>
+                <li>Use safe access routes or safe ladders to access measurement points located at a height. (Unsafe
+                    practices like stepping on working or idle motors, compressors, belt guards, valves should be
+                    avoided).</li>
+                <li>Be sure of the location of the “emergency stop” switch of the machine before start of any test.</li>
+                <li>Tapping’s from pipe lines for pressure and flow measurements should be flushed before measurements
+                    as these may be choked due to liquid stagnation.</li>
+            </ul>
+
+        </div>
+
+        <div class="row">
+            <h4 style="font-size: 26px;font-weight:bold" class="display-6">Instruments</h4>
+            <ol>
+                <li>Transit Time Ultrasonic flow meter</li>
+                <li>Vane Anemometer</li>
+                <li>Hot wire anemometer</li>
+                <li>Pitot tube</li>
+                <li>thermo-wells</li>
+                <li>Calibrated mercury in glass thermometer (bulb diameter not greater than 6.5 mm).</li>
+                <li>Calibrated thermocouple with calibrated indicator.</li>
+                <li>Calibrated electric resistance thermometer. </li>
+
+            </ol>
+        </div>
+        <div class="row text-center" style="justify-content: center;">
+            <div class="col-md-3 mx-5">
+                <img src="img/hvac3.jpg" style="height: 80%;">
+                <p class="mt-4">Ultrasonic flowmeter</p>
+            </div>
+            <div class="col-md-3 mx-5">
+                <img src="img/hvac4.jpg" style="height: 80%;">
+                <p class="mt-4">Infrared Thermometer</p>
+            </div>
+            <div class="col-md-3 mx-5">
+                <img src="img/hvac5.jpg" style="height: 80%;">
+                <p class="mt-4">Thermocouple</p>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="row">
+            <h4 style="font-size: 26px;font-weight:bold" class="display-6">Instructions for Layman</h4>
+            <ol>
+                <li>Number of appliances in a room</li>
+                <li>Wattage of each appliance</li>
+                <li>Hours of use</li>
+                <li>light should be kept on for 30mins before conducting the audit</li>
+                <li>Fan should be at maximum speed</li>
+                <li>Star rating of AC should be noticed</li>
+            </ol>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="container mb-5 mt-5">
+        <div class="row mb-3 text-center">
+            <h4 style="font-size: 26px;font-weight:bold">Audit Calculators</h4>
+        </div>
+        <div class="row" style="justify-content: space-around;">
+            <a class="col-sm-4 btn btn-primary" href="hvac1.html">Water Cooled Chiller System</a>
+            <!-- <a class="btn btn-primary" href="hvac3.html">Liquid Cooled Condensor</a> -->
+            <!-- <a class="btn btn-primary" href="hvac2.html">Air cooled condensor</a> -->
+            <a class="col-sm-4 btn btn-primary" href="hvac4.html">Air Cooled Chiller System</a>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="pumpC.js"></script>
+
+
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright: Foreman Energy Auditors
+
+    </div>
+
+</body>
+
+</html>

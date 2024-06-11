@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreman Energy Auditors</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="data/watercooled.js"></script>
+    <script src="data/aircooled.js"></script>
+    <script src="hvac4.js"></script>
+
+
+</head>
+<style>
+    html {
+        font-size: 18px;
+    }
+</style>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Foreman Energy Auditors</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="light-audit.html">Light Audit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pump-audit.html">Pump Audit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hvac.html">HVAC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center text-center mt-5 mb-5">
+            <div class="col-xs-9">
+                <h1>HVAC Audit (Air Cooled Chiller System)</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="card formcard">
+                <div class="card-body">
+                    <h5 class="card-title">Pre Audit Detials</h5>
+                    <form>
+                        <div class="mb-3">
+                            <label for="nt" class="form-label">Likely drive transmission efficiency,
+                                ηt</label>
+                            <select class="form-select" aria-label="Select your Pump Application" id="nt" name="nt">
+                                <option selected></option>
+                                <option value="0.98">Proper Lubricated precision gear drive 98%</option>
+                                <option value="0.97">Synthetic Flat Belt Drive 97%</option>
+                                <option value="0.95">V-Belt Drive 95%</option>
+
+                            </select>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-4">
+                                <label for="durationofrun" class="form-label">Duration Of Run</label>
+                                <input onchange="Hvac()" type="text" class="form-control" id="durationofrun"
+                                    name="durationofrun" aria-describedby="motorVoltageHelp">
+                                <div id="motorVoltageHelp" class="form-text">minutes</div>
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <label for="Ql" class="form-label">Cooling Air flow in condenser, Qair </label>
+                                <input onchange="Hvac()" type="text" class="form-control" id="Ql" name="Ql"
+                                    aria-describedby="QlHelp">
+                                <div id="QlHelp" class="form-text"></div>
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label for="Wm" class="form-label">Power input to motor, Wm</label>
+                                <input onchange="Hvac()" type="text" class="form-control" id="Wm" name="Wm"
+                                    aria-describedby="WmHelp">
+                                <div id="WmHelp" class="form-text">kW</div>
+                            </div>
+
+
+                        </div>
+                        <iframe
+                            src="https://www.herramientasingenieria.com/onlinecalc/psychrometrics/psychrometrics.html"
+                            title="psycho chart" style="width: 100%; height: 500px;""
+                            >
+                        </iframe>
+                        <!-- <button type=" button" class="btn btn-primary" onclick="Hvac()">Submit</button> -->
+                            <div class="mb-3 col-md-4">
+                                <label for="Tei" class="form-label">Enthalpy of air at condenser inlet, hair-I </label>
+                                <input onchange="Hvac()" type="text" class="form-control" id="Tei" name="Tei"
+                                    aria-describedby="TeiHelp">
+                                <div id="TeiHelp" class="form-text">°C</div>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="Teo" class="form-label">Enthalpy of air at condenser outlet, hair-o </label>
+                                <input onchange="Hvac()" type="text" class="form-control" id="Teo" name="Teo"
+                                    aria-describedby="TeoHelp">
+                                <div id="TeoHelp" class="form-text">°C</div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center output">
+            <div class="card formcard">
+                <div class="card-body">
+                    <h4 style="font-size: 26px;font-weight:bold" class="card-title">Calculated Results</h4>
+                    <hr>
+                    <form>
+                        <!-- <h6>Energy Consumption and Bill</h6> -->
+                        <div class="row">
+                            <!-- <div class="mb-3 col-md-6">
+                                <label for="monthlyConsumption" class="form-label">Monthly Energy Consumption</label>
+                                <input onchange="Hvac()" type="text" class="form-control" id="monthlyConsumption"
+                                    name="monthlyConsumption" readonly aria-readonly="true"
+                                    aria-describedby="monthlyConsumptionHelp">
+                                <div id="monthlyConsumptionHelp" class="form-text">Units</div>
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="monthlyBill" class="form-label">Monthly Bill</label>
+                                <input onchange="Hvac()" type="text" class="form-control" id="monthlyBill" name="monthlyBill" readonly
+                                    aria-readonly="true" aria-describedby="monthlyBillHelp">
+                                <div id="monthlyBillHelp" class="form-text">Rs.</div>
+                            </div> -->
+                            <div class="mb-3 col-md-6">
+                                <label for="Qe" class="form-label">Refrigeration Effect, Qe</label>
+                                <input onchange="Hvac()" onchange="Hvac()" type="text" class="form-control" id="Qe"
+                                    name="Qe" readonly aria-readonly="true" aria-describedby="QeHelp">
+                                <div id="QeHelp" class="form-text">TR</div>
+                            </div>
+
+                            <!-- <div class="mb-3 col-md-6">
+                                <label for="R" class="form-label">Refrigeration Effect, R</label>
+                                <input onchange="Hvac()" onchange="Hvac()" type="text" class="form-control" id="R" name="R" readonly aria-readonly="true"
+                                    aria-describedby="RHelp">
+                                <div id="RHelp" class="form-text">kJ/h</div>
+                            </div> -->
+                        </div>
+                        <br><br>
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label for="Wc" class="form-label">Estimated Compressor shaft power, Wc</label>
+                                <input onchange="Hvac()" onchange="Hvac()" type="text" class="form-control" id="Wc"
+                                    name="Wc" readonly aria-readonly="true" aria-describedby="WcHelp">
+                                <div id="WcHelp" class="form-text">kW</div>
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label for="COP" class="form-label">Coefficient of Performance, COP</label>
+                                <input onchange="Hvac()" onchange="Hvac()" type="text" class="form-control" id="COP"
+                                    name="COP" readonly aria-readonly="true">
+                                <div id="WcHelp" class="form-text">pu</div>
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label for="EER" class="form-label">Energy Efficiency Ratio, EER</label>
+                                <input onchange="Hvac()" onchange="Hvac()" type="text" class="form-control" id="EER"
+                                    name="EER" readonly aria-readonly="true" aria-describedby="EERHelp">
+                                <div id="EERHelp" class="form-text"></div>
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label for="SPC" class="form-label">Specific power consumption, SPC</label>
+                                <input onchange="Hvac()" onchange="Hvac()" type="text" class="form-control" id="SPC"
+                                    name="SPC" readonly aria-readonly="true">
+                                <div id="WcHelp" class="form-text">kW/TR</div>
+
+
+                            </div>
+                            <label for="refrigerant" class="form-label">Type of Refrigerant beign used</label>
+
+                            <select class="form-select" aria-label="Select your Refrigerant" id="refrigerant"
+                                name="refrigerant" onchange="Hvac()">
+                                <option selected></option>
+                                <option value="1">R22</option>
+                                <option value="2">R134A</option>
+                                <option value="3">R410A </option>
+                                <option value="4">R407C </option>
+
+                            </select </div>
+
+                            <br><br>
+                        </div>
+                    </form>
+                    <br><br>
+                    <hr>
+                    <!-- <h4 style="font-size: 26px;font-weight:bold" class="card-title">Recommendations</h4>
+                    <hr>
+                    <h6>Energy Consumption and Bill</h6>
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="monthlyConsumptionRec" class="form-label">Monthly Energy Consumption</label>
+                            <input type="text" class="form-control" id="monthlyConsumptionRec"
+                                name="monthlyConsumptionRec" readonly aria-readonly="true"
+                                aria-describedby="monthlyConsumptionRecHelp">
+                            <div id="monthlyConsumptionRecHelp" class="form-text">Units</div>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="monthlyBillRec" class="form-label">Monthly Bill</label>
+                            <input type="text" class="form-control" id="monthlyBillRec" name="monthlyBillRec" readonly
+                                aria-readonly="true" aria-describedby="monthlyBillRecHelp">
+                            <div id="monthlyBillRecHelp" class="form-text">Rs.</div>
+                        </div>
+                    </div>
+                    <h6>Energy and Monetary Savings</h6>
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="reductionCons" class="form-label">Reduction in consumption</label>
+                            <input type="text" class="form-control" id="reductionCons" name="reductionCons" readonly
+                                aria-readonly="true" aria-describedby="reductionConsHelp">
+                            <div id="reductionConsHelp" class="form-text">Units</div>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="monetarySavings" class="form-label">Monetary Savings</label>
+                            <input type="text" class="form-control" id="monetarySavings" name="monetarySavings"
+                                readonly aria-readonly="true" aria-describedby="monetarySavingsHelp">
+                            <div id="monetarySavingsHelp" class="form-text">Rs.</div>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="investment" class="form-label">Investment</label>
+                            <input type="text" class="form-control" id="investment" name="investment" readonly
+                                aria-readonly="true" aria-describedby="investmentHelp">
+                            <div id="investmentHelp" class="form-text">Rs.</div>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="paybackPeriod" class="form-label">Simple Payback Period</label>
+                            <input type="text" class="form-control" id="paybackPeriod" name="paybackPeriod" readonly
+                                aria-readonly="true" aria-describedby="paybackPeriodHelp">
+                            <div id="paybackPeriodHelp" class="form-text">Years</div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+
+
+                        <th scope="col">Company</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Refrigerant</th>
+                        <th scope="col">Nominal Capacity</th>
+                        <th scope="col">Length</th>
+                        <th scope="col">Width</th>
+                        <th scope="col">Height</th>
+                        <th scope="col">Power Supply</th>
+                        <th scope="col">Star</th>
+
+                    </tr>
+                </thead>
+                <tbody id="output-table-body">
+
+                </tbody>
+            </table>
+            <br><br>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="pumpC.js"></script>
+
+
+
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright: Foreman Energy Auditors
+
+    </div>
+</body>
+
+</html>

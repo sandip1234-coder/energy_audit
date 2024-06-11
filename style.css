@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #d9dbdf;
+}
+
+.formcard {
+    border-radius: 20px;
+    
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 1% 5% 8% 5%;
+}
+
+.main-title {
+    /* height: 20vh; */
+    background-color: #333;
+    color: #9c1111;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 5vh;
+    border-radius: 50px;
+    margin: 4vh;
+}
+
+.main-title h3 {
+    font-size: 30px;
+}
+
+
+.main-title h2 {
+    font-weight: 600;
+}
+
+.lead {
+    font-weight: 400;
+}
+
+.impeller input {
+    width: 78%;
+    margin-left: 1px;
+}
+
+.impeller button {
+    width: 20%;
+    margin-left: 22px;
+}
