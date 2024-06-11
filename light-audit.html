@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    html {
+        font-size: 18px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreman Energy Auditors</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="data/watercooled.js"></script>
+    <script src="data/aircooled.js"></script>
+    <script src="hvac1.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Foreman Energy Auditors</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="light-audit.html">Light Audit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pump-audit.html">Pump Audit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hvac.html">HVAC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row px-4 py-5 text-center bg-dark text-white"
+        style="background-image: url('./img/light.jpg');min-height: 500px;display: flex;align-items: center;background-size: cover;">
+        <div style="background-color: rgba(0, 0, 0, 0.5); width: 35%;margin: auto;border-radius: 50px;">
+
+            <h1 class="mt-5 display-5 fw-bold pb-5">Light Audit</h1>
+            <!-- <p class="lead mb-4 pb-4">To help save energy</p> -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h4 style="font-size: 26px;font-weight:bold" class="display-6">Terms Used</h4>
+            <dl class="row">
+                <br>
+                <dt class="col-sm-3">Luminaire</dt>
+                <p>
+                    It is the complete lighting unit, consisting of a lamp or lamps together with the
+                    parts designed to distribute the light, position and protect the lamps, and connect the lamps to the
+                    power supply.
+                </p>
+                <br>
+                <dt class="col-sm-3">Lumens (lm)</dt>
+
+                <p>Unit of luminous flux; the flux emitted within a unit solid angle by a point source with a
+                    uniform luminous intensity of one candela. </p>
+
+
+                <br>
+                <dt class="col-sm-3">Luminous efficacy(lm/W)</dt>
+                <p>The ratio of lumen output of the lamp and the rated power consumption expressed in
+                    lumens per watt. It indicates the efficiency of the luminaire.
+                </p>
+                <br>
+                <dt class="col-sm-3">Recommended illuminance levels (lux)</dt>
+                <p>
+                    It is the level of illuminance required for a particular task to be carried out by
+                    an operator comfortably.
+                </p>
+                <br>
+                <dt class="col-sm-3">Mounting height (m)</dt>
+                <p>
+                    The height of the fixture or lamp above the working plane
+                </p>
+                <br>
+                <dt class="col-sm-3">Watt per m<sup>2</sup></dt>
+
+                <p> It is the ratio of power in watts to the area of the work plane.</p>
+
+                <br>
+                <dt class="col-sm-3">Energy performance Index (kWh/m2/year)</dt>
+                <p>It is the key metric used for benchmarking energy usage in commercial building.</p>
+
+
+                <br>
+                <dt class="col-sm-3">BEE Star Rating</dt>
+                <p> The luminaires are rated on a scale of 5 for the energy efficiency by BEE.</p>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <tr>
+                            <th>Star Rating</th>
+                            <th>Rated Luminous Efficacy (lm/W)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>≥68 & <79 </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>≥79 & <90 </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>≥90 & <105 </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>≥105 & <120 </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>≥120 </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Star Rating by BEE in LED lights</p>
+
+            </dl>
+        </div>
+        <div class=" row">
+            <h4 style="font-size: 26px;font-weight:bold" class="display-6">Intruments Used</h4>
+            <p class="lead">Measuring Tape</p>
+        </div>
+        <div class="row">
+            <h4 style="font-size: 26px;font-weight:bold" class="display-6">Instructions to carry the audit</h4>
+            <ol>
+                <li>Select the type of Building and Room you are conducting the audit for under Building Identification
+                    and Room Identification</li>
+                <li>Choose Rate type and enter the value of Tariff.</li>
+                <li>Measure the length, width and mounting height of the room using a measuring tape.</li>
+                <li>Enter the measured values under Room Dimensions.</li>
+                <li>Select the Luminaire under Luminaire Name and enter the value of Number of Luminaires, Daily Usage
+                    and Operating days per month.</li>
+                <li>Click submit after entering all required details.</li>
+
+            </ol>
+        </div>
+
+
+    </div>
+
+
+    <div class="container mb-5 mt-5">
+        <div class="row mb-3">
+            <h4 style="font-size: 26px;font-weight:bold">Audit Calculators</h4>
+        </div>
+        <a class="btn btn-primary" href="light.html">Light Audit</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="pumpC.js"></script>
+
+
+
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright: Foreman Energy Auditors
+
+    </div>
+</body>
+
+</html>
